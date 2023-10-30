@@ -1,8 +1,9 @@
 # DevOps workshop
 * Kubernetes
-  * Component
+  * Components
   * Deployment strategies
   * Volume and Storage
+  * Scaling with HPA
 
 ## Install Kubernetes
 * kubectl - Kubernetes client [official instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
