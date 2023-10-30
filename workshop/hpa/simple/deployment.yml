@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpav1-web
+spec:
+  selector:
+    matchLabels:
+      app: hpav1-web
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hpav1-web
+    spec:
+      containers:
+        - name: app
+          image: somkiat/demo_hpa:1.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
