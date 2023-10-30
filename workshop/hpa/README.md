@@ -30,6 +30,8 @@ $minikube dashboard --url
 
 ## 3. Testing
 ```
+$minikube service hpa-service --url
+
 $kubectl run --rm=true -i --tty load-test --image=busybox /bin/sh
 >wget -q -O- http://hpa-service.default.svc.cluster.local
 ```
