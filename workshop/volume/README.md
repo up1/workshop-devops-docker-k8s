@@ -2,6 +2,7 @@
 
 ## 1. [Host Path](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)
 Config minikube :: mount file from minikube with Host
+* https://minikube.sigs.k8s.io/docs/handbook/mount/
 ```
 $minikube mount $(pwd)/data:/data
 ```
