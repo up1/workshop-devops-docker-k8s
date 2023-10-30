@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-example
+  labels:
+    app: metrics-example
+spec:
+  selector:
+    matchLabels:
+      app: metrics-example
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: metrics-example
+    spec:
+      containers:
+        - name: metrics-example
+          image: somkiat/demo_hpa_metric:1.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 20m
+              memory: 30Mi
+            limits:
+              cpu: 50m
+              memory: 50Mi
