@@ -24,6 +24,12 @@ $kubectl port-forward po/test-pd 8000:80
 
 See and edit file from `$(pwd)/data`
 
+
+Delete all resources
+```
+$kubectl delete -f host_path.yml
+```
+
 ## 2. [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 
 ### 2.1 Create a Persistent Volume (PV)
@@ -67,3 +73,10 @@ Expose port of Pods
 $kubectl port-forward po/task-pv-pod 8000:80
 ```
 * Access to url = http://localhost:8000/
+
+Delete all resources
+```
+$kubectl delete -f pod.yml
+$kubectl delete -f pvc.yml
+$kubectl delete -f pv.yml
+```
