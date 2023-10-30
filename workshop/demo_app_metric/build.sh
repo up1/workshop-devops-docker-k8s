@@ -1,0 +1,1 @@
+docker buildx build --push --platform linux/amd64,linux/arm64 -t somkiat/demo_hpa_metric:1.0 .
