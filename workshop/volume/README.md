@@ -1,4 +1,5 @@
 # Workshop with Volume and Storage with Pods
+* [Storage](https://kubernetes.io/docs/concepts/storage/)
 
 ## 1. [Host Path](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)
 Config minikube :: mount file from minikube with Host
