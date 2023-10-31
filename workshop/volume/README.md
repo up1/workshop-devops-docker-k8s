@@ -36,7 +36,6 @@ $kubectl delete -f host_path.yml
 
 ### 2.1 Create a Persistent Volume (PV)
 
-
 ```
 // Start mount file
 $minikube mount $(pwd)/data:/data
@@ -50,6 +49,7 @@ task-pv-volume   10Gi       RWO            Retain           Available           
 ```
 
 ### 2.2 Create a PersistentVolumeClaim (PVC)
+* [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/)
 
 ```
 // Create PV
