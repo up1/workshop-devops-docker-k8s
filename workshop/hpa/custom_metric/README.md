@@ -73,3 +73,38 @@ Acccess to service
 ```
 $kubectl apply -f sm.yml
 ```
+
+## 4. Create Horizontal Pods Autoscale (HPA)
+```
+$kubectl apply -f hpa.yml
+
+$kubectl describe hpa
+$kubectl get hpa
+NAME    REFERENCE                    TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+hpav2   Deployment/metrics-example   <unknown>/20   2         10        2          63s
+```
+
+## 5. Load Testing
+```
+$kubectl run --rm=true -i --tty load-test --image=busybox /bin/sh
+>wget -q -O- http://metrics-example.default.svc.cluster.local
+>while true; do wget -q -O- http://metrics-example.default.svc.cluster.local; done
+```
+
+Watch HPA
+```
+$kubectl get hpa hpav2 -w
+```
+
+Watch ReplicatSet
+```
+$kubectl get rs -w
+```
+
+## 6. Delete all resources
+```
+$kubectl delete -f deployment.yml
+$kubectl delete -f service.yml
+$kubectl delete -f sm.yml
+$kubectl delete -f hpa.yml
+```
