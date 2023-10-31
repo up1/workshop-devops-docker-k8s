@@ -82,7 +82,7 @@ $kubectl get service
 NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 nginx        ClusterIP   10.109.191.49   <none>        80/TCP    4s
 
-$kubectl port-forward service/nginx 8000:80
+$kubectl port-forward service/nginx-blue 8000:80
 ```
 
 Testing
