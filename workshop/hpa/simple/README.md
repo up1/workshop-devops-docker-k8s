@@ -50,7 +50,7 @@ hpav1   Deployment/hpav1-web   <unknown>/10%   2         10        0          12
 ```
 $kubectl run --rm=true -i --tty load-test --image=busybox /bin/sh
 >wget -q -O- http://hpa-service.default.svc.cluster.local
->while true; sleep 5; do wget -q -O- http://hpa-service.default.svc.cluster.local; done
+>while true; sleep 0.001s; do wget -q -O- http://hpa-service.default.svc.cluster.local; done
 ```
 
 Watch HPA
