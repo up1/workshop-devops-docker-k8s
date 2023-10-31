@@ -8,7 +8,7 @@ $minikube addons enable metrics-server
 $minikube addons list
 ```
 
-## 2. Deployment spring boot project
+## 2. Deployment Golang project
 ```
 $kubectl apply -f simple/deployment.yml
 

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: somkiat/demo_hpa:1.0
+          image: somkiat/demo_hpa
           ports:
             - containerPort: 80
           resources:
