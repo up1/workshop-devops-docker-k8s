@@ -15,7 +15,7 @@ $kubectl get all --namespace monitoring
 $kubectl get svc --namespace monitoring
 
 $kubectl get po --namespace monitoring
-kubectl get po --namespace monitoring
+$kubectl get po --namespace monitoring
 NAME                                   READY   STATUS    RESTARTS   AGE
 alertmanager-main-0                    2/2     Running   0          2m31s
 alertmanager-main-1                    2/2     Running   0          2m31s
@@ -107,4 +107,6 @@ $kubectl delete -f deployment.yml
 $kubectl delete -f service.yml
 $kubectl delete -f sm.yml
 $kubectl delete -f hpa.yml
+
+$kubectl delete all --all
 ```
