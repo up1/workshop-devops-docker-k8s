@@ -76,7 +76,7 @@ nginx-blue-7b4d6c5684    5         5         5       2m19s
 
 Deploy service
 ```
-$kubectl apply -f blue-green/service.yml
+$kubectl apply -f blue-green/service_blue.yml
 $kubectl get service
 NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 nginx        ClusterIP   10.109.191.49   <none>        80/TCP    4s
@@ -97,6 +97,8 @@ $kubectl get rs -w
 NAME                     DESIRED   CURRENT   READY   AGE
 nginx-blue-7b4d6c5684    5         5         5       2m19s
 nginx-green-695bb6dbb6   5         5         5       15s
+
+$kubectl apply -f blue-green/service_green.yml
 ```
 
 Start Kubernetes dashboard with minikube
@@ -107,6 +109,8 @@ $minikube dashboard --url
 Scaling down first version (Blue)
 ```
 $kubectl scale deployment nginx-blue --replicas=0
+$kubectl delete -f blue-green/service_blue.yml
+$kubectl delete -f blue-green/blue.yml
 ```
 
 Testing
@@ -119,5 +123,6 @@ Delete all resources
 ```
 $kubectl delete -f blue-green/blue.yml
 $kubectl delete -f blue-green/green.yml
-$kubectl delete -f blue-green/service.yml
+$kubectl delete -f blue-green/service_blue.yml
+$kubectl delete -f blue-green/service_green.yml
 ```
